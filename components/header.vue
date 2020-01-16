@@ -23,15 +23,18 @@ export default {};
 </script>
 
 <style lang="less" scoped>
+
 .row {
+  position: relative;
+  z-index: 3;
   width: 100%;
   height: 60px;
   align-items: center;
   width: 1000px;
   margin: 0 auto;
   min-width: 1000px;
-  border-bottom:2px solid #ccc;
-  box-shadow: 0 2px 3px 3px #666;
+  border-bottom: 2px solid #ccc;
+  box-shadow: 2px 0px 3px 3px #666;
 }
 .left {
   img {
@@ -52,8 +55,8 @@ export default {};
       color: yellow;
     }
   }
-  .nuxt-link-exact-active{
-      background-color: #409eff;
+  .nuxt-link-exact-active {
+    background-color: #409eff;
   }
 }
 </style>
