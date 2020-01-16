@@ -1,5 +1,5 @@
 <template>
-  <div class="index">首页</div>
+  <div class="index">机票首页</div>
 </template>
 
 <script>
