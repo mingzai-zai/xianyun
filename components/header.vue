@@ -12,7 +12,17 @@
       </el-row>
       <div class="right">
         <span class="el-icon-bell">消息</span>
-        <nuxt-link to="/user/login">登录/注册</nuxt-link>
+        <nuxt-link to="/user/login" v-if='!$store.state.user.userInfo.token'>登录/注册</nuxt-link>
+        <el-dropdown  v-if='$store.state.user.userInfo.token'>
+          <span class="el-dropdown-link">
+            <img :src="`${$axios.defaults.baseURL+$store.state.user.userInfo.user.defaultAvatar}`" alt="" class="user_pic">
+            {{$store.state.user.userInfo.user.nickname}}
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>个人中心</el-dropdown-item>
+            <el-dropdown-item>消息</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
       </div>
     </el-row>
   </div>
@@ -23,7 +33,6 @@ export default {};
 </script>
 
 <style lang="less" scoped>
-
 .row {
   position: relative;
   z-index: 3;
@@ -58,5 +67,11 @@ export default {};
   .nuxt-link-exact-active {
     background-color: #409eff;
   }
+}
+.user_pic{
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  vertical-align: middle;
 }
 </style>

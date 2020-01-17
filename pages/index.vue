@@ -63,19 +63,20 @@ export default {
       corrent:0
     };
   },
-  mounted() {
+  async mounted() {
     // console.log(1)
-    this.$axios({
+   let res = await this.$axios({
       url: "/scenics/banners"
     })
-      .then(res => {
-        this.pics = res.data.data;
-        // console.log(this.pics)
-        // console.log(res)
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    this.pics = res.data.data;
+      // .then(res => {
+      //   this.pics = res.data.data;
+      //   // console.log(this.pics)
+      //   // console.log(res)
+      // })
+      // .catch(err => {
+      //   console.log(err);
+      // });
   },
   methods: {
     tab_click(index){
